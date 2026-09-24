@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<!-- Ler o número de horas inteiras que um veículo permaneceu em um estacionamento e informar se o motorista é 
+cliente cadastrado (1 para sim e 0 para não). Cada uma das duas primeiras horas custa R$ 6,00; a partir da
+terceira, cada hora adicional custa R$ 4,00. Se o veículo permaneceu mais de duas horas e o motorista é 
+cadastrado, conceder 10% de desconto. Calcular e escrever o valor antes do desconto, o desconto concedido e o total a pagar. -->
+
+<script>
+
+    var horasInteiras, clienteCadastrado, valorAntesDoDesconto, descontoConcedido, totalAPagar;
+
+    horasInteiras = parseInt(prompt("Digite o número de horas inteiras que o veículo permaneceu no estacionamento:"));
+    clienteCadastrado = parseInt(prompt("O motorista é cliente cadastrado? (1 para sim e 0 para não):"));
+
+    if (horasInteiras > 2 && clienteCadastrado == 1) {
+
+    valorAntesDoDesconto= (horasInteiras - 2) * 6;
+    descontoConcedido = valorAntesDoDesconto * 0.1;
+    totalAPagar = valorAntesDoDesconto - descontoConcedido;
+
+    alert(`
+    Valor: R$ ${valorAntesDoDesconto}
+    Desconto concedido: R$ ${descontoConcedido}
+    Total: R$ ${totalAPagar}`);
+
+    } 
+
+    else if (horasInteiras > 2 && clienteCadastrado == 0) {
+
+  totalAPagar = ((horasInteiras - 2) * 6) + 12;
+
+    alert(`
+    Valor: R$ ${totalAPagar}
+    Desconto concedido: R$ 0
+    Total: R$ ${totalAPagar}`);
+
+    } 
+    else{
+
+totalAPagar = horasInteiras * 6;
+    alert(`
+
+    Valor: R$ ${totalAPagar}
+    Desconto concedido: R$ 0
+    Total: R$ ${totalAPagar}`);
+
+    }
+
+</script>
